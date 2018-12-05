@@ -6,8 +6,9 @@ product:
     concurrent: true  #this makes the proiduct pipelines run in parallel
     next_product_pipeline_trigger: ''
     recipients: "email.adress@redhat.com"
-    skipmail: "bool_value"
-    trigger_parameters:    #based of cvp prduct params: https://gitlab.sat.engineering.redhat.com/cvp/pipeline/blob/master/product/playbooks/build_parameters.yml
+    skipmail: "true" #false
+    trigger_parameters:    
+    #based of cvp prduct params: https://gitlab.sat.engineering.redhat.com/cvp/pipeline/blob/master/product/playbooks/build_parameters.yml
       - string:
           name: GIT_REPO
           default: ''
@@ -26,7 +27,7 @@ product:
 ---
   - name: cnv
     base_url: ''
-    concurrent: true  #this makes the proiduct pipelines run in parallel
+    concurrent: true  #this makes the product pipelines run in parallel
     next_product_pipeline_trigger: ''
     recipients: "email.adress@redhat.com"
     skipmail: "bool_value"
