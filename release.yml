@@ -1,0 +1,39 @@
+---
+product:
+  - name: cvp
+    description: |
+    base_url: "https://gitlab.sat.engineering.redhat.com/cvp/pipeline"
+    concurrent: true  #this makes the proiduct pipelines run in parallel
+    next_product_pipeline_trigger: ''
+    recipients: "email.adress@redhat.com"
+    skipmail: "bool_value"
+    trigger_parameters:    #based of cvp prduct params: https://gitlab.sat.engineering.redhat.com/cvp/pipeline/blob/master/product/playbooks/build_parameters.yml
+      - string:
+          name: GIT_REPO
+          default: ''
+          value: ''
+      - string:
+          name: GIT_BRANCH
+          default: ''
+          value: ''
+      - string:
+          name: MASTER_JENKINS_URL
+          default: ''
+          value: ''
+  # The above goes on until the params needed are covered in the yaml for the product
+
+# This would be next product, like cnv, under product
+---
+  - name: cnv
+    base_url: ''
+    concurrent: true  #this makes the proiduct pipelines run in parallel
+    next_product_pipeline_trigger: ''
+    recipients: "email.adress@redhat.com"
+    skipmail: "bool_value"
+    trigger_parameters:
+      - string:
+          name: kubevirt
+          brew_tag: '' # these could be changed, just for the skeleton
+          type:        # same as above
+
+---
