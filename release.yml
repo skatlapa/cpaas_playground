@@ -2,7 +2,7 @@
 product:
   - name: cvp
     description: |
-    base_url: "https://gitlab.sat.engineering.redhat.com/cvp/pipeline"
+    base_url: ""
     concurrent: true  #this makes the proiduct pipelines run in parallel
     next_product_pipeline_trigger: ''
     recipients: "email.adress@redhat.com"
